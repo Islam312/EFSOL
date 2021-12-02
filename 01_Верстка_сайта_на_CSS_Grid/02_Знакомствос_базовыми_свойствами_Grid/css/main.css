@@ -1,0 +1,62 @@
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/** Colors for grid items*/
+.red {
+  background: red;
+}
+.purple {
+  background: purple;
+}
+.blue {
+  background: blue;
+}
+.green {
+  background: green;
+}
+.pink {
+  background: pink;
+}
+.darkblue {
+  background: darkblue;
+}
+.aqua {
+  background: aqua;
+}
+.orange {
+  background: orange;
+}
+.steelblue {
+  background: steelblue;
+}
+.violet {
+  background: violet;
+}
+
+/** grid*/
+.grid-container {
+  display: grid;
+}
+.grid-container.homework {
+  grid-gap: 10px;
+
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.grid-container.task-1 {
+  grid-template-columns: 200px 30% 100px 20%;
+  grid-template-rows: 20px 100px;
+}
+.grid-container.task-1 .grid-item {
+  outline: 1px black solid;
+}
+.grid-container.task-2 {
+  grid-template-rows: 300px;
+  grid-template-columns: 50px 1fr 50px;
+}
+.grid-container.task-3 {
+  grid-template-columns: auto auto auto auto auto;
+}
