@@ -1,0 +1,61 @@
+* {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 16px;
+}
+body {
+  padding: 0 20px;
+  margin: 0;
+}
+.container {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.grid-container {
+  display: grid;
+  background-color: purple;
+  padding: 40px;
+}
+.grid-container.homework-in-video {
+  grid-template-columns: [start-line] repeat(2, 1fr) [middle-line]repeat(2, 1fr) [end-line];
+  grid-template-rows: [start-row] repeat(2, 50px) [end-row];
+}
+.grid-container.homework-in-video div:first-child {
+  grid-column: start-line/span 2;
+}
+.grid-container.homework-in-video div:last-child {
+  grid-column: middle-line/end-line;
+}
+.grid-container.homework-in-video .grid-item {
+  background-color: yellow;
+  border: 1px #000 solid;
+  text-align: center;
+  line-height: 50px;
+}
+
+.grid-container.add-task {
+  /** Дополнительное задание*/
+  grid-template-columns: [startLine] repeat(2, 40px) [sidebar] 40px [endLine];
+  grid-template-rows: [startLine] repeat(3, 30px) [footer] 30px [endLine];
+  grid-gap: 10px;
+}
+.grid-container.add-task .grid-item {
+  outline: 1px solid yellow;
+  background-color: steelblue;
+  text-align: center;
+  line-height: 30px;
+}
+
+/** задание 2 */
+.grid-container.add-task div:first-child {
+  grid-column: startLine / endLine;
+  grid-row: startLine / endLine;
+}
+
+/** Задание 3*/
+.grid-container.add-task div:nth-child(2) {
+  grid-column: 1 / span 3;
+  grid-row: footer / span 4;
+}
