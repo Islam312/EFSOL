@@ -1,0 +1,65 @@
+* {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.grid-container {
+  display: grid;
+  background-color: purple;
+}
+.grid-container .grid-item {
+  outline: 1px solid yellow;
+  background-color: steelblue;
+}
+/******************************/
+/** homework*/
+.homework {
+  height: 500px;
+  width: 100%;
+  grid-template: repeat(2, 30%) / repeat(3, minmax(auto, 33%));
+  /* grid-template: repeat(2, 100px 50px) / repeat(2, 50px auto); */
+  grid-auto-rows: min-content;
+  /** task #1*/
+  grid-gap: 15px;
+}
+/** task #2*/
+/** Перепишите на флекс правило grid-template-rows 50рх 1fr 50рх.*/
+.flex-container {
+  display: flex;
+  height: 200px;
+}
+.task-2 {
+  flex-direction: column;
+}
+.flex-container.task-2 div:nth-child(odd) {
+  height: 50px;
+}
+.flex-container.task-2 div:nth-child(even) {
+  height: 100%;
+}
+.flex-item {
+  outline: 1px red solid;
+  background: #000;
+  color: #fff;
+}
+
+/** task #3*/
+/** Перепишите на флекс правило grid-template-columns 50рх auto 50рх auto.*/
+.flex-container.task-3 div:nth-child(odd) {
+  width: 50px;
+}
+.flex-container.task-3 div:nth-child(even) {
+  width: 100%;
+}
