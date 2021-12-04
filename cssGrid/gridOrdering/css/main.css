@@ -1,0 +1,61 @@
+* {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 16px;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+.container {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.grid-container {
+  display: grid;
+  background-color: purple;
+}
+.grid-container .grid-item {
+  outline: 1px solid yellow;
+  background-color: steelblue;
+}
+
+/* .g-ordering {
+  grid-template: repeat(3, 100px) / auto auto;
+  text-align: center;
+  line-height: 100px;
+}
+
+.grid-container.g-ordering div:first-child {
+  order: 1;
+  background-color: blue;
+}
+
+.grid-container.g-ordering div:last-child {
+  order: -1;
+  background-color: blue;
+} */
+
+.homework {
+  grid-template: repeat(3, 100px) / repeat(3, 100px);
+  position: relative;
+}
+.grid-container.homework div:nth-child(n) {
+  opacity: 0.5;
+}
+/** Задание 1*/
+.grid-container.homework div:first-child {
+  position: absolute;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  opacity: 1;
+}
+/** Задание 2*/
+.grid-container.homework div:last-child {
+  order: -1;
+}
