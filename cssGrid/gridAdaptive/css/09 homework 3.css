@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  height: 300px;
+  width: 90%;
+  grid-template: 50px 1fr 50px / 1fr;
+}
+.item {
+  border: 1px solid #000;
+}
+.container div:nth-child(2) {
+  margin: 50px;
+}

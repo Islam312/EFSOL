@@ -1,0 +1,106 @@
+html {
+  font-size: 62.5%;
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+* {
+  font-size: 1.6rem;
+  box-sizing: border-box;
+}
+.grid-container {
+  display: grid;
+  grid-template: 10rem 1fr 10rem / repeat(3, 1fr);
+  grid-template-areas:
+    'logo header header'
+    'nav main main'
+    'footer footer footer';
+  height: 100%;
+  width: 90%;
+  margin: 0 auto;
+  grid-gap: 0.5rem;
+  transition: 10s all;
+}
+.grid-container * {
+  border: 1px #000 solid;
+}
+.logo {
+  grid-area: logo;
+}
+header {
+  grid-area: header;
+}
+nav {
+  grid-area: nav;
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template: 8rem 3rem 1fr 8rem / repeat(3, 1fr);
+    grid-template-areas:
+      'logo header header'
+      'nav nav nav'
+      'main main main'
+      'footer footer footer';
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+    grid-gap: 0.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template: 5rem 7rem 3rem 1fr 12rem / 1fr;
+    grid-template-areas:
+      'logo'
+      'header'
+      'nav'
+      'main'
+      'footer';
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+    grid-gap: 0.5rem;
+  }
+}
+/** grid animation task #2*/
+
+/* @media (max-width: 960px) {
+  @keyframes gridAnimationScaleBlock {
+    0% {
+      grid-template-areas:
+        'logo header header'
+        'nav main main'
+        'footer footer footer';
+    }
+    50% {
+      grid-template: 5rem 9rem 1fr 9rem / repeat(3, 1fr);
+      grid-template-areas:
+        'logo logo logo'
+        'header header header'
+        'nav main main'
+        'footer footer footer';
+    }
+    100% {
+      grid-template: 5rem 9rem 3rem 1fr 9rem / repeat(3, 1fr);
+      grid-template-areas:
+        'logo logo logo'
+        'header header header'
+        'nav nav nav'
+        'main main main'
+        'footer footer footer';
+    }
+  }
+  .grid-container {
+    animation: gridAnimationScaleBlock 2s linear infinite ;
+  }
+} */
