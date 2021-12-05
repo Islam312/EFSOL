@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: darkcyan;
+}
+.container {
+  width: 100%;
+}
+.item {
+  /* width: 150px; */
+  /* height: 100px; */
+  background: #fff;
+  border: 1px solid darkcyan;
+  color: darkcyan;
+  font-size: 24px;
+  text-align: center;
+  line-height: 100px;
+}
+/** task # 1*/
+/* .d-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.d-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+} */
+
+/** #2*/
+/**flex*/
+/* .h-500 {
+  height: 200px;
+}
+.d-flex {
+  display: flex;
+}
+.left-side {
+  min-width: 200px;
+}
+.left-side div {
+  width: 100%;
+}
+.left-side div:nth-child(2),
+.right-side div:nth-child(2) {
+  height: 100%;
+}
+.right-side {
+  display: block;
+  width: 100%;
+}
+.item {
+  height: 90px;
+  width: 100%;
+} */
+
+/**grid*/
+/* .d-grid {
+  display: grid;
+  grid-template: 90px 1fr 90px / 200px 1fr;
+} */
+
+/** #3*/
+/* .d-flex {
+  display: flex;
+}
+.left {
+  width: 60%;
+  height: 100%;
+}
+.right {
+  display: flex;
+  flex-wrap: wrap;
+}
+.span-block {
+  display: block;
+  height: 200px;
+  width: 100%;
+  margin: 0;
+} */
+/** grid*/
+/* .span-block {
+  display: block;
+}
+.d-grid {
+  display: grid;
+  grid-template: repeat(2, 100px) / 200px repeat(2, 150px);
+}
+
+.d-grid div:first-child {
+  grid-row: 1 / span 2;
+} */
+/** #4*/
+
+.d-grid{
+  display: grid;
+  grid-template: repeat(1, 100px) / repeat( auto-fit, minmax(100px, auto));
+  grid-auto-columns: max-content;
+}
+.d-grid-bottom{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 50%));
+}
