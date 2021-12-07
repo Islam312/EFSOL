@@ -41,6 +41,34 @@ header {
   margin-left: auto;
   margin-right: 10px;
 }
+/** task2*/ 
+.task-2 {
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 20px
+}
+.task-2 div {
+  font-size: 32px;
+  height: 200px;
+  width: 600px;
+  border: 1px solid #000;
+
+}
+.task-2 div:nth-child(odd){
+  width: 300px;
+}
+.task-2 div:nth-child(1) {
+  background-color: red;
+}
+.task-2 div:nth-child(2) {
+  background-color: yellow;
+}
+.task-2 div:nth-child(3) {
+  background-color: green;
+}
+
+
 
 .front {
   align-items: center;
