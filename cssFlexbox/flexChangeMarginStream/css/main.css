@@ -1,0 +1,90 @@
+* {
+  font-size: 16px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+}
+header {
+  padding: 55px 0;
+  background-color: steelblue;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.nav {
+  justify-content: space-around;
+}
+.nav-link {
+  display: block;
+  width: 250px;
+
+  padding: 20px 0;
+  background-color: darkorange;
+  text-align: center;
+  color: #fff;
+  font-size: 32px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.nav a:last-child {
+  margin-left: auto;
+}
+
+.front {
+  align-items: center;
+  justify-content: space-around;
+}
+.front img {
+  height: 300px;
+  width: 360px;
+}
+.front i {
+  margin: 0 10px;
+  color: darkorange;
+  font-size: 32px;
+}
+
+.internet {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.internet img {
+  width: 360px;
+  height: 300px;
+  margin-top: 20px;
+}
+
+.net {
+  margin-top: 40px;
+  padding: 10px;
+}
+.net img {
+  width: 350px;
+  height: 300px;
+  margin-right: 20px;
+  margin-top: 5px;
+}
+.net .description {
+  font-size: 24px;
+  line-height: 1.5;
+}
+.source-net {
+  flex-direction: column;
+}
+.source-net div:nth-child(even) img {
+  margin-left: 20px;
+  margin-right: 0;
+  order: 1;
+}

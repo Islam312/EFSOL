@@ -1,0 +1,59 @@
+html {
+  font-size: 62.5%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 50px;
+}
+.d-flex {
+  display: flex;
+  height: 100%;
+}
+.d-flex div{
+  margin: 10px;
+}
+.d-flex div {
+  width: 50px;
+  height: 50px;
+}
+.d-flex div:nth-child(1) {
+  background-color: red;
+}
+.d-flex div:nth-child(2) {
+  background-color: yellow;
+}
+.d-flex div:nth-child(3) {
+  background-color: green;
+}
+.d-flex div:nth-child(4) {
+  background-color: steelblue;
+}
+.d-flex div:nth-child(5) {
+  background-color: violet;
+}
+.d-flex div:nth-child(6) {
+  background-color: darkcyan;
+}
+
+.row {
+  flex-direction: row;
+}
+.row-reverse {
+  flex-direction: row-reverse;
+}
+.column {
+  flex-direction: column;
+}
+.column-reverse {
+  flex-direction: column-reverse;
+}
+.wrap {
+  flex-wrap: wrap;
+}
