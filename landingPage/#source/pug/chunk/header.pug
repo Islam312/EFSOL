@@ -1,11 +1,23 @@
-header 
-   .navigation
-      .logo Product site
+header.header.d-flex
+   .navigation.container.d-flex
+      .logo.d-flex 
+         img(src="img/logo.png", alt="Logotype")
+         span Product
       nav(role="navigation")
-         ul.list-menu   
-            li.list-menu__item Home
-            li.list-menu__item Product
-            li.list-menu__item Settings
-            li.list-menu__item About
+         ul.list.d-flex   
+            li.list__item.active-item
+               a.list__link(href="#product") product                     
+            li.list__item 
+               a.list__link(href="#customers") customers
+            li.list__item 
+               a.list__link(href="#pricing") pricing
+            li.list__item 
+               a.list__link(href="#resources") resources
+      .buttons-group.d-flex 
+         a(href="#")#signIn.base-button sign in
+         a(href="#")#signUp.base-button.bg-cyan sign up
+         .change-theme#changeTheme
+            a(href="#") 
+               img(src="img/changeTheme.png" alt="change theme")
 
 
