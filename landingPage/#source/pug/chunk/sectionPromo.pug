@@ -1,25 +1,10 @@
 section.promo
-  h1 Иттерация each
-  - var list = ["home", "settings", "about"]
-  ul.list
-    each item in list
-      li.list__item   
-        a.list__link=item
-
-  h1 Condition if + иттерация each
-  ul.list
-    each item, index in list
-      if item.length >= 5
-        li.list__item   
-          a.list__link=item
-      else 
-        li.list__item   
-          a.list__link item is low 5
-  h1 mixin
-  mixin list(listName)
-    ul(class=listName)
-      li(class=listName+"__item")
-        a(href="#" class="active")=listName
-      
-
-  +list(list)
+  .container.d-flex 
+    .promo__left 
+      .title Work at the speed of thought
+      .txt Tools, tutorials, design and innovation experts, all in one place! The most intuitive way to imagine your next user experience.
+      .buttons-group
+        a(href="#").base-button get started
+        a(href="#").base-button get started
+    .promo__right 
+      img(src="img/promo-amico.png", alt="social amico")

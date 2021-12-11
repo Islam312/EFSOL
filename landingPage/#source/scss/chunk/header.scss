@@ -13,7 +13,6 @@ header {
   .list {
     &__item {
       margin-right: 2.5rem;
-
       transition: 0.3s;
       &:hover {
         text-decoration: underline;
@@ -25,12 +24,8 @@ header {
   }
   .buttons-group {
     align-items: center;
-    // margin-top: -1rem;
     & > a {
       margin-right: 2rem;
-      &:last-child {
-        background-color: $base-darkcyan-color;
-      }
     }
   }
 }

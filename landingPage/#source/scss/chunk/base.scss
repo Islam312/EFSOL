@@ -11,7 +11,8 @@ body {
   box-sizing: border-box;
   font-size: 1.6rem;
 }
-ul {
+ul,
+ol {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -53,14 +54,14 @@ a {
 }
 
 .base-button {
-  @include font(inherit, 1.6rem, 700, initial);
+  @include font(inherit, 1.6rem, 600, initial);
   text-transform: capitalize;
   border: 0.1rem solid #bcd0e5;
   padding: 1rem 3rem;
   background-color: $base-darkcyan-color;
   color: #fff;
-  border-radius: .4rem;
-  transition: .3s;
+  border-radius: 0.4rem;
+  transition: 0.3s;
   &:hover {
     background-color: #fff;
     color: $base-color-logo;
