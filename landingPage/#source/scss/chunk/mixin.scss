@@ -4,3 +4,10 @@
   font-weight: $weight;
   color: $color;
 }
+@mixin base-button($width, $height, $color, $bgColor, $txt-transform) {
+  width:  $width;
+  height: $height;
+  color: $color;
+  background-color: $bgColor;
+  text-transform: $txt-transform;
+}

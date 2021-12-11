@@ -1,12 +1,69 @@
-html{
-  font-size: 62.5%;
+html {
+  @include font('Poppins', 62.5%, normal, $base-font-color)
+    //* 62.5%   = > 10px => 1rem
+;
 }
-*{
+body {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
   font-size: 1.6rem;
 }
-ul {
+ul,
+ol {
   list-style: none;
-  @media (min-width: 768px) {
-      list-style-type: disc;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: $base-font-color;
+}
+
+//* base class
+
+.container {
+  width: 12.4rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.d-flex {
+  display: flex;
+}
+.logo {
+  width: 4rem;
+  height: 4rem;
+  align-items: center;
+  span {
+    margin-left: 1.6rem;
+  }
+}
+
+.list {
+  &__item {
+    @include font(inherit, 1.6rem, 400, $base-font-color);
+    text-transform: capitalize;
+    &.active-item {
+      font-weight: 600;
+    }
+  }
+}
+
+.base-button {
+  @include font(inherit, 1.6rem, 600, initial);
+  text-transform: capitalize;
+  border: 0.1rem solid #bcd0e5;
+  padding: 1rem 3rem;
+  background-color: $base-darkcyan-color;
+  color: #fff;
+  border-radius: 0.4rem;
+  transition: 0.3s;
+  &:hover {
+    background-color: #fff;
+    color: $base-color-logo;
   }
 }

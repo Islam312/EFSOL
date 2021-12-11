@@ -1,17 +1,31 @@
 header {
   width: 100%;
-  padding: 50px 0;
-  background: steelblue;
 }
-.navigation{
-  display: flex;
-  .list-menu{
-    display: flex;
-    &__item{
-      padding: 10px;
+.header {
+  height: 8rem;
+}
+
+.navigation {
+  align-items: center;
+  .logo {
+    margin-right: auto;
+  }
+  .list {
+    &__item {
+      margin-right: 2.5rem;
+      transition: 0.3s;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &__link {
+      display: block;
     }
   }
-  @media (min-width: 768px) {
-      font-size: 2rem;
+  .buttons-group {
+    align-items: center;
+    & > a {
+      margin-right: 2rem;
+    }
   }
 }

@@ -14,14 +14,14 @@ const path = {
     pug: sourceFolder + '/pug/*.pug',
     scss: sourceFolder + '/scss/style.scss',
     js: sourceFolder + '/js/script.js',
-    img: sourceFolder + '/img/**/*.{jpg,jpeg,svg,gif,ico,webp}',
+    img: sourceFolder + '/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}',
     fonts: sourceFolder + '/fonts/*.ttf',
   },
   watch: {
     pug: sourceFolder + '/**/*.pug',
     scss: sourceFolder + '/scss/**/*.scss',
     js: sourceFolder + '/js/**/*.js',
-    img: sourceFolder + '/img/**/*.{jpg,jpeg,svg,gif,ico,webp}',
+    img: sourceFolder + '/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}',
   },
   clean: './' + projectFolder + '/',
 };
@@ -43,7 +43,8 @@ let pugs = require('gulp-pug'),
 //* Переменные для JavaScript
 let babel = require('gulp-babel'),
   webpack = require('webpack-stream');
-
+//* Переменные для Фотографий
+let imagemin = require('gulp-imagemin');
 //* Функции обработки задач
 //* ========================== Server
 const server = () => {
@@ -69,11 +70,26 @@ const pug = () => {
     .pipe(dest(path.build.html))
     .pipe(browserSync.stream());
 };
+
+//* ==========================Обработка IMAGES
+const images = () => {
+  return src(path.source.img)
+    .pipe(
+      imagemin({
+        progressive: true,
+        svgoPlugins: [{ removeViewBox: false }],
+        interlaced: true,
+        optimizationLevel: 3,
+      })
+    )
+    .pipe(dest(path.build.img))
+    .pipe(browserSync.stream());
+};
 //*========================== Обработка SASS
 const scss = () => {
   return src(path.source.scss, { sourcemaps: true })
     .pipe(plumber())
-    .pipe(sass())
+    .pipe(sass().on('error', sass.logError))
     .pipe(
       autoprefixer({
         overrideBrowserslist: ['last 5 versions'],
@@ -114,14 +130,20 @@ const watcher = () => {
   watch([path.watch.pug], pug);
   watch([path.watch.scss], scss);
   watch([path.watch.js], js);
+  watch([path.watch.img], images);
 };
 
 //* ============================ Задачи
 exports.pug = pug;
 exports.scss = scss;
 exports.js = js;
+exports.images = images;
 exports.watch = watcher;
 exports.clean = clean;
 
 //*============================== Сборка
-exports.dev = series(clean, parallel(js, scss, pug), parallel(watcher, server));
+exports.dev = series(
+  clean,
+  parallel(js, scss, pug, images),
+  parallel(watcher, server)
+);
