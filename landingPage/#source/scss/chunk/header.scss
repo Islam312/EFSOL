@@ -6,7 +6,6 @@ header {
 }
 
 .navigation {
-  align-items: center;
   .logo {
     margin-right: auto;
   }
@@ -23,7 +22,6 @@ header {
     }
   }
   .buttons-group {
-    align-items: center;
     & > a {
       margin-right: 2rem;
     }
