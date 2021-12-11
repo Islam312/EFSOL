@@ -1,13 +1,52 @@
+//* mixin of fonts
 @mixin font($ff, $size, $weight, $color) {
   font-family: $ff;
   font-size: $size;
   font-weight: $weight;
   color: $color;
 }
+
+//* mixin of base buttons
 @mixin base-button($width, $height, $color, $bgColor, $txt-transform) {
-  width:  $width;
+  width: $width;
   height: $height;
   color: $color;
   background-color: $bgColor;
   text-transform: $txt-transform;
+}
+
+//* mixin for triangles of design
+@mixin triangle($size, $color, $direction) {
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: $size;
+  @if ($direction == 'up') {
+    border-bottom-color: $color;
+  } @else if ($direction == 'bottom') {
+    border-top-color: $color;
+  } @else if ($direction == 'left') {
+    border-right-color: $color;
+  } @else if ($direction == 'right') {
+    border-left-color: $color;
+  } @else {
+    @error "Unknown direction #{$direction}.";
+  }
+}
+
+//*position center
+
+@mixin position-center-relative {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin position-center-absolute{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
