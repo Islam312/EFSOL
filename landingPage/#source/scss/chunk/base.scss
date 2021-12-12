@@ -30,7 +30,9 @@ a {
   margin: 0 auto;
   padding: 0 2rem;
 }
-
+.d-grid {
+  display: grid;
+}
 .d-flex {
   display: flex;
   align-items: center;
@@ -69,18 +71,22 @@ a {
   }
 }
 
-.base-title {
+h2.base-title {
   text-align: center;
   font-size: $base-title-fz;
+  margin: 0;
+  padding: 0;
 }
-.base-section-subtitle {
+h6.base-section-subtitle {
   text-align: center;
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 2.6rem;
+  margin: 0;
+  padding: 0;
 }
 p.base-text {
   font-weight: normal;
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
 }
