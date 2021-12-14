@@ -1,2 +1,31 @@
-footer 
-  h1 Подвал сайта
+footer.footer
+  .container 
+    .footer__nav.d-flex 
+      .footer__column
+        .logo.d-flex 
+          img(src="img/logo.png", alt="Logotype")
+          span Product
+        .social-box
+          a(href="#").social-box__link 
+            i.fab.fa-instagram
+          a(href="#").social-box__link 
+            i.fab.fa-facebook-f
+          a(href="#").social-box__link 
+            i.fab.fa-twitter
+      .footer__column
+        h6.base-section-subtitle Resourse
+        a(href="#").nav-link About Us
+        a(href="#").nav-link Blog
+        a(href="#").nav-link Contact
+        a(href="#").nav-link FAQ 
+      .footer__column
+        h6.base-section-subtitle Legal Stuff
+        a(href="#").nav-link Disclaimer
+        a(href="#").nav-link Financing
+        a(href="#").nav-link Privacy Policy
+        a(href="#").nav-link Terms of Service 
+      .footer__column
+        h6.base-section-subtitle knowing you're always on the best energy deal. 
+        form(action="#").form
+          input(type="text")
+          button(type='submit').base-button Sign up Now

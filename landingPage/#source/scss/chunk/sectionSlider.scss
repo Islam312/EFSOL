@@ -1,0 +1,40 @@
+section.slider {
+  padding-top: 15rem;
+  text-align-last: left;
+  @media (max-width: 1100px) {
+    padding: 0;
+    margin-top: 10rem;
+  }
+  .list-strategies {
+    align-items: start;
+    justify-content: space-between;
+    @media (max-width: 1100px) {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    &__item {
+      max-width: 34.8rem;
+      margin-top: 3.3rem;
+
+      img {
+        width: 100%;
+      }
+    }
+    .text {
+      margin-top: 2.4rem;
+      padding: 0 2rem;
+      h3.title {
+        margin: 1.2rem 0;
+        font-size: 2.4rem;
+        line-height: 4rem;
+      }
+    }
+  }
+  h6.base-section-subtitle{
+    @media (max-width: 768px) {
+      max-width: 80%;
+      margin-top: 1rem;
+    }
+  }
+  
+}

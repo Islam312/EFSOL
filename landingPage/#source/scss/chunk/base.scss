@@ -1,6 +1,10 @@
 html {
   @include font('Poppins', 62.5%, normal, $base-font-color);
   //* 62.5%   = > 10px => 1rem
+
+  @media (max-width: 768px) {
+    font-size: 70%;
+  }
 }
 body {
   margin: 0;
@@ -29,6 +33,10 @@ a {
   width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
+
+  @media (max-width: 768px) {
+    padding: 0 4rem;
+  }
 }
 .d-grid {
   display: grid;
@@ -38,10 +46,14 @@ a {
   align-items: center;
 }
 .logo {
-  width: 4rem;
-  height: 4rem;
+  img {
+    width: 4rem;
+    height: 4rem;
+  }
   span {
     margin-left: 1.6rem;
+    font-size: 2.4rem;
+    font-weight: 600;
   }
 }
 
@@ -69,6 +81,10 @@ a {
     background-color: #fff;
     color: $base-color-logo;
   }
+  @media (max-width: 450px) {
+    font-weight: 400;
+
+  }
 }
 
 h2.base-title {
@@ -76,17 +92,25 @@ h2.base-title {
   font-size: $base-title-fz;
   margin: 0;
   padding: 0;
+  @media (max-width: 520px) {
+    font-size: 2.4rem;
+  }
 }
 h6.base-section-subtitle {
   text-align: center;
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 2.6rem;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  @media (max-width: 520px) {
+    font-weight: 400;
+  }
 }
 p.base-text {
   font-weight: normal;
   font-size: 1.6rem;
   line-height: 2.6rem;
+  text-indent: 3rem;
 }
+

@@ -1,0 +1,48 @@
+section.boost {
+  margin-top: 15rem;
+  @media (max-width: 1100px) {
+    margin-top: 10rem;
+  }
+  .wrapper {
+    margin: 0 auto;
+    max-width: 96.8rem;
+    padding: 1.4rem 3.6rem 2rem 5rem;
+    background-color: $base-darkcyan-color;
+    border-radius: 3.2rem;
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+    }
+    h2.base-title {
+      text-align: left;
+    }
+
+    .d-flex {
+      align-items: start;
+    }
+
+    .item {
+      color: #fff;
+      &:first-child {
+        margin-top: 3.5rem;
+        @media (max-width: 768px) {
+          margin-top: 1.5rem;
+        }
+      }
+      &:last-child {
+        @media (max-width: 768px) {
+          display: block;
+          margin: 0 auto;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .base-button {
+      margin-top: 5rem;
+      background-color: #fff;
+      color: $base-darkcyan-color;
+    }
+  }
+}

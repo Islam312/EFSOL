@@ -11,14 +11,14 @@ const path = {
     fonts: projectFolder + '/fonts/',
   },
   source: {
-    pug: sourceFolder + '/pug/*.pug',
+    pug: sourceFolder + '/pug/**/*.pug',
     scss: sourceFolder + '/scss/style.scss',
     js: sourceFolder + '/js/script.js',
     img: sourceFolder + '/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}',
     fonts: sourceFolder + '/fonts/*.ttf',
   },
   watch: {
-    pug: sourceFolder + '/**/*.pug',
+    pug: sourceFolder + '/pug/**/*.pug',
     scss: sourceFolder + '/scss/**/*.scss',
     js: sourceFolder + '/js/**/*.js',
     img: sourceFolder + '/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}',

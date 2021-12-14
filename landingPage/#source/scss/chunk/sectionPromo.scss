@@ -1,11 +1,30 @@
 .promo {
   width: 100%;
   margin-top: 2.5rem;
+  .wrapper {
+    @media (max-width: 981px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__right {
+    img {
+      width: 100%;
+    }
+  }
   .title {
     font-size: 4rem;
     line-height: 6rem;
     max-width: 65%;
     margin-top: 12rem;
+    @media (max-width: 981px) {
+      margin-top: 1rem;
+      max-width: 100%;
+    }
+    @media (max-width: 520px) {
+      font-size: 3rem;
+      line-height: 3rem;
+    }
   }
   .txt {
     max-width: 45rem;
@@ -16,13 +35,19 @@
   .base-button {
     margin-right: 3rem;
   }
+  
   .button-video {
     text-transform: capitalize;
     display: inline-flex;
     text-decoration: underline;
     .triangle {
       @include triangle(1rem, $base-darkcyan-color, right);
-
+    }
+    @media (max-width: 520px) {
+      max-width: 100%;
+      margin-top: 2rem;
+      display: flex;
+      justify-content: end;
     }
   }
 }

@@ -1,0 +1,50 @@
+section.process {
+  margin-top: 15rem;
+  padding-top: 5.2rem;
+  background: url('../img/Bg-up.png') no-repeat center top;
+  @media (max-width: 1100px) {
+    padding: 5rem 0 0;
+    margin-top: 5rem;
+  }
+  .base-section-subtitle {
+    padding-top: 1.6rem;
+    max-width: 54.2rem;
+  }
+  .experts {
+    padding-top: 3.2rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    &__item {
+      width: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      @media (max-width: 768px) {
+        width: 70%;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        flex-direction: row-reverse;
+      }
+      &:nth-child(3){
+      @media (max-width: 768px) {
+        flex-direction: row;
+      }
+      }
+      &:nth-child(4){
+        @media (max-width: 768px) {
+          flex-direction: row-reverse;
+        }
+        }
+    }
+    .icon {
+      margin: 0 1rem;
+      border-radius: 50%;
+    }
+  }
+  .base-button {
+    margin-top: 4.8rem;
+    @include position-center-relative;
+  }
+}

@@ -1,3 +1,8 @@
-const sum = require('./module/sum.js');
-console.log('sum =>>', sum(10, 15));
-console.log('sum =>>', sum(15, 15));
+// const swiper = require('./module/slider.js');
+// import swiper from './module/slider'; 
+
+// $(document).ready(function(){
+//   $('.your-class').slick({
+//     setting-name: setting-value
+//   })
+// })

@@ -1,27 +1,63 @@
 header {
   width: 100%;
+  @media (max-width: 940px) {
+    padding: 2rem 0;
+  }
 }
 .header {
   height: 8rem;
+  @media (max-width: 940px) {
+    height: auto;
+  }
 }
 
 .navigation {
+  @media (max-width: 940px) {
+    flex-wrap: wrap;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
   .logo {
     margin-right: auto;
   }
   .list {
+    @media (max-width: 520px) {
+      // flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    @media (max-width: 768px) {
+      margin-top: 2rem;
+    }
     &__item {
       margin-right: 2.5rem;
       transition: 0.3s;
       &:hover {
         text-decoration: underline;
       }
+    @media (max-width: 520px) {
+      margin: 0;
+      padding: 1rem;
+    }
     }
     &__link {
       display: block;
     }
   }
   .buttons-group {
+    @media (max-width: 940px) {
+      margin-top: 2rem;
+      margin-left: auto;
+    }
+    @media (max-width: 440px) {
+      flex-direction: column;
+      align-content: center;
+      margin: 0;
+      &>*{
+        margin: 1rem;
+      }
+    }
     & > a {
       margin-right: 2rem;
     }
