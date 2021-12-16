@@ -1,0 +1,110 @@
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+img {
+  width: 100%;
+}
+button {
+  border: 0;
+}
+h2.base-title {
+  margin: 40px 0 0;
+  color: #d03636;
+}
+.base-subtitle {
+  margin: 10px 0;
+  color: #aca;
+}
+.base-button {
+  background-color: #d03636;
+  color: #fff;
+}
+.base-text {
+  font-size: 18px;
+}
+.d-flex {
+  display: flex;
+}
+
+.promo img {
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.promo {
+  position: relative;
+}
+.promo p.base-text {
+  position: absolute;
+  bottom: 10%;
+  display: flex;
+  background: #fff6;
+  padding: 20px;
+  color: #fff;
+}
+.promo p.base-text b {
+  color: #d03636;
+}
+.promo .base-button {
+  width: 200px;
+}
+.block-news img {
+  width: 300px;
+}
+.block-news .info {
+}
+.block-news p.base-text {
+  padding: 0 30px;
+}
+
+.list-link {
+  background-color: #d03636;
+  margin-top: 10px;
+  padding: 10px 0 10px 20px;
+  width: 90%;
+}
+.list-link li {
+  margin-right: 20px;
+}
+.auth {
+  padding: 100px 30px 0;
+  min-height: 100%;
+  background-color: #ffc4c4;
+  min-width: 300px;
+}
+.auth a {
+  color: #d03636;
+}
+.auth .title {
+  color: #d03636;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.form {
+  justify-content: space-between;
+  align-items: center;
+}
+.form a {
+  display: block;
+  margin: 10px 0;
+}
+.form button {
+  padding: 10px 20px;
+}
+.nav a {
+  display: block;
+  margin: 5px 0;
+}
