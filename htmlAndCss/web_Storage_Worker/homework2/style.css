@@ -1,0 +1,27 @@
+.wrapper {
+  width: 350px;
+  height: fit-content;
+  border: 1px solid #000;
+  margin: 100px auto;
+  box-sizing: border-box;
+}
+.form {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+input {
+  margin: 5px 0;
+  max-width: 100%;
+  width: 100%;
+  padding: 5px 0;
+}
+input[name='output'] {
+  margin: 20px 0;
+}
+.buttons-group {
+  padding: 0 10px;
+  display: flex;
+  padding-bottom: 20px;
+  justify-content: space-around;
+}

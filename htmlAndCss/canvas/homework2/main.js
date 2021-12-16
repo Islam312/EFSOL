@@ -15,5 +15,4 @@ c.closePath()
 
 
 
-drawShape(c, 40, 40)
 c.stroke()

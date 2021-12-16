@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Player</title>
+  </head>
+  <body>
+    <style>
+      .btn-controls {
+        justify-content: center;
+        display: flex;
+      }
+      .btn-controls button {
+        padding: 10px 20px;
+        border: 1px solid #000;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+      .player {
+        max-width: 70%;
+      }
+      .player video {
+        width: 100%;
+      }
+    </style>
+    <div class="player" >
+      <video id="video" poster="photo.jpg" height="400px">
+        <source src="video.mp4" />
+      </video>
+      <div class="btn-controls">
+        <button id="play">Play</button>
+        <button id="pause">Pause</button>
+        <button id="prev">-5s</button>
+        <button id="next">+5s</button>
+        <button id="upVolume">Volume +</button>
+        <button id="downVolume">Volume -</button>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
