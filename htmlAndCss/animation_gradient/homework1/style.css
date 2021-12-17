@@ -1,0 +1,16 @@
+.gradient {
+  width: 400px;
+  height: 400px;
+  margin: 100px auto;
+
+  background-image: repeating-radial-gradient(
+      circle at center,
+      #ffff00 10%,
+      transparent 70%,
+      #ffff00 90%
+    ),
+    repeating-radial-gradient(ellipse at left, #ffff00e7 10px, #0080007b 20px),
+    repeating-radial-gradient(ellipse at right, #ffff00e3 10px, #0080007b 20px);
+  /* background-size: 100% 50%; */
+  /* repeating-linear-gradient(green, yellow, skyblue); */
+}
