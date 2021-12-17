@@ -1,0 +1,12 @@
+html{
+  font-size: 62.5%;
+}
+*{
+  font-size: 1.6rem;
+}
+ul {
+  list-style: none;
+  @media (min-width: 768px) {
+      list-style-type: disc;
+  }
+}
