@@ -1,9 +1,12 @@
-const person1 = {
-  firstName: 'Islam',
-  lastName: 'Alyshbek uulu',
-  sayHello() {
-    console.log(`Hello ${this.firstName} ${this.lastName}`);
-  },
+const createUser = (firstName, lastName) => {
+  return {
+    firstName,
+    lastName,
+    sayHello() {
+      console.log(`Hello ${this.firstName} ${this.lastName}`);
+    },
+  };
 };
 
-person1.sayHello();
+let user1 = createUser('Islam', 'Alyshbek uulu');
+user1.sayHello();
