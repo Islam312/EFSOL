@@ -16,6 +16,6 @@ const pers1 = createObj('islam_dev', 'alyshbekov96@gmail.com', 123456);
 
 pers1.show();
 
-delete pers1.login;
+pers1.login = undefined;
 
-pers1.show();
+console.log('pers1.login =>>', pers1.login);
