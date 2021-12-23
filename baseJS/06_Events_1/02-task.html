@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 02</title>
+  </head>
+  <style>
+    .form {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+    }
+    .form input {
+      padding: 10px;
+      margin: 5px;
+    }
+  </style>
+  <body>
+    <form action="#" class="form">
+      <h1>Вычислить объем цилиндра</h1>
+      <input type="text" placeholder="Радиус" name="radius" />
+      <input type="text" placeholder="Высота" name="height" />
+      <br />
+      <input type="submit" value="Рассчитать" />
+      <br />
+      <input type="text" name="result" id="output" disabled />
+    </form>
+    <script>
+      /*
+        Задание:
+        Напишите сценарий, который вычисляет объем цилиндра по параметрам, которые вводит пользователь.
+        Для расчета используйте формулу - V=π * r в квадрате * h
+        Разместите на странице два поля ввода - первое для радиуса цилиндра, второе для высоты цилиндра.
+        Объем цилиндра выведите в тело страницы.
+        */
+      /************************************************************************************************/
+      const radius = document.querySelector('[name = "radius"]');
+      const height = document.querySelector('[name = "height"]');
+      const submit = document.querySelector('[type = "submit"]');
+      const result = document.querySelector('#output');
+
+      submit.addEventListener('click', calcV);
+      function calcV(e) {
+        e.preventDefault;
+        result.value = (Math.PI * (+radius.value ^ 2) * +height.value).toFixed(
+          2
+        );
+      }
+    </script>
+  </body>
+</html>
