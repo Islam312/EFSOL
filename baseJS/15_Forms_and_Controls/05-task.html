@@ -217,7 +217,7 @@
         }
 
         select(id) {
-          if (id != '') {
+          if (id) {
             this.selectedData = this.data.filter((item) => item.id == id)[0];
             this.deselectAll();
             const index = this.data.indexOf(this.selectedData);
@@ -253,13 +253,7 @@
 
         fillForm(user) {
           if (!user) {
-            this.currentUser = '';
-            this.form.firstName.value = '';
-            this.form.lastName.value = '';
-            this.form.companyName.value = '';
-            this.form.balance.value = '';
-            this.form.email.value = '';
-            this.form.age.value = '';
+            this.form.reset();
           } else {
             this.currentUser = user;
             this.form.firstName.value = user.name.first;
@@ -307,13 +301,12 @@
       });
 
       removeUser.addEventListener('click', function (e) {
-        // userList.innerHTML = '';
         listService.userRemove();
-        formService.fillForm('');
+        formService.fillForm();
       });
       removeCash.addEventListener('click', function () {
-        formService.fillForm('');
-        listService.select('');
+        formService.fillForm();
+        listService.select();
       });
     </script>
   </body>
