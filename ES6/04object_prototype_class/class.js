@@ -34,3 +34,33 @@ class Bird extends Animal {
 const duck = new Bird('duck', 'quack', true);
 dog.say();
 duck.say();
+
+//* Нововведение ES 2019
+//* Использование переменных в теле класса
+
+class Increment {
+  count = 0; //* дает возможность создавать переменные
+
+  inc() {
+    this.count++;
+    console.log('this.count =>>', this.count);
+  }
+}
+
+const incValue = new Increment();
+incValue.inc();
+
+//* Использование ключевого слова static
+
+class Decrement extends Increment {
+  static count = 5; //*  с помощью static мы можем на прямую обращаться с наружи не делая экземпляра класса
+  static dec() {
+    //* Статистические функции работают только со статистическими свойствами
+    this.count--;
+    console.log('this.count =>>', this.count);
+  }
+}
+
+console.log('Decrement.count =>>', Decrement.count);
+Decrement.count = 3;
+Decrement.dec();
