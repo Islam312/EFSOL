@@ -92,3 +92,14 @@ resolve: {
     "start": "webpack-dev-server -mode development --open"
   }
   //* --open флаг автоматического открытия в броузере
+
+
+  //* cross-env NODE_ENV=production
+  //* cross-env NODE_ENV=production
+  //* cross-env определяет операционную систему 
+  а дальше мы передаем системную переменную в качестве development
+  чтобы словить в webpack.config.js b узнать в каком режиме находиться приложение
+  потом передать в devServer.hot , а также 
+  передать в module.rules hmr для  изменение состояние сущности 
+  без перезагрузки страницы 
+  
