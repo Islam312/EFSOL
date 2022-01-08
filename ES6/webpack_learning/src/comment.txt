@@ -65,3 +65,30 @@ modules:{
 
 
 //* по умолчанию webpack работает c JSON файлами, эта конфигурация loader из коробки
+
+
+
+ context: path.resolve(__dirname, 'src'), дает определение что контекстом работы плагинов и тому подобного является src
+
+mode: 'development', - по умолчанию объект webpack.config.js работает в режиме development
+
+
+resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
+
+  //* resolve.alias дает возможность обращаться на прямую к src без ./
+
+  
+//* npm i -D webpack-dev-server = открывает девелопер сервер для комфортного кодинга
+   devServer: {
+    port: 4200, //* порт на котором будет запускаться сервер разработки
+  },
+
+  также создается отдельный скрипт для запуска сервера в package.json
+  scripts: {
+    "start": "webpack-dev-server -mode development --open"
+  }
+  //* --open флаг автоматического открытия в броузере
