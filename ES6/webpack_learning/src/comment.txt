@@ -1,0 +1,67 @@
+//* webpack - сборщик модулей Javascript
+//***// npm install -D webpack webpack-cli
+//  Установка пакетов через npm менеджер пакетов
+*webpack - корневой функционал инструмента сборщик
+*webpack-cli - отвечает за доступность команд через консоль,
+                 для управление через консоль
+
+*webpack.config.js - это файл конфигурации webpack, это название webpack  
+                    ищет по умолчанию который должен экспортировать объект
+                    модуль где написаны инструкции для webpack
+//***//Базовая конфигурация webpack
+module.exports = {
+  entry: './src/js/....js'  //* связывающая папка
+  output:{
+    filename: 'bundle.js' //*файл где собирается js
+    path: path.resolve(__dirname, "dist")  //* куда записывается bundle.js
+  }
+}
+
+//*package.json
+script: {
+  dev: "webpack --mode development"
+  build: "webpack --mode production"
+}
+//* npm run dev <==> build
+
+//* webpack.config.js
+plugins:[
+  new HTMLWebpackPlugin(
+    {template: //* за основу берет шаблон из src в dist}
+    )  //* создает динамический html 
+  // файл который связывается новыми js  файлом
+  // при изменении
+
+  new CleanWebpackPlugin(), //* каждый раз очищает dist  от старых файлов
+]
+
+//* npm i -D html-webpack-plugin clean-webpack-plugin
+
+
+
+//* loader css - это конфигурация для подключение и собирания css файлов
+
+modules:{
+  rules:[
+    {
+      test: /\.css$/,
+      use:[
+        'style-loader', 'css-loader'
+      ]
+    },
+    {
+      test:/\.(png|jpg|svg|gif)$/,
+      use: ['file-loader']
+    }
+  ]
+}
+//* test: /\.css$/ это регулярное выражение ищет все импорты css
+//* use будет запускаться при срабатывания test
+      //* css-loader - понимает написания import './...css'
+      //* style-loader - в html в блок head записывает stylesheet
+
+//* npm i -D style-loader css-loader 
+
+
+
+//* по умолчанию webpack работает c JSON файлами, эта конфигурация loader из коробки
