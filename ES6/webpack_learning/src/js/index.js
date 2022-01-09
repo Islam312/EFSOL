@@ -3,6 +3,8 @@ import Post from '@/js/Post';
 import json from '@/assets/json.json';
 
 import '@/css/style.css';
+import '@/sass/sass.sass';
+import '@/sass/scss.scss';
 
 const post = new Post('Webpack title post');
 

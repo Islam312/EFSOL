@@ -1,1 +1,0 @@
-(()=>{"use strict";(()=>{const t=JSON.parse('{"title":"I am JSON title"}'),e=new class{constructor(t){this.title=t,this.date=new Date}toString(){return JSON.stringify({title:this.title,date:this.date.toJSON()})}}("Webpack title post");console.log("Post to string",e.toString()),console.log("json: =>>",t)})()})();
