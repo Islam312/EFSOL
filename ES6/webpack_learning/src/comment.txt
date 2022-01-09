@@ -102,4 +102,19 @@ resolve: {
   потом передать в devServer.hot , а также 
   передать в module.rules hmr для  изменение состояние сущности 
   без перезагрузки страницы 
-  
+
+
+  optimization: optimization() - создаем функцию,
+  чтобы с режиме production css файлы были 
+  оптимизированы-минифицированы
+  а для html в в плагине HTMLWebpackPlugin добавим поле 
+  minify: {
+    collapseWhitespace: !isDev
+  }
+      //* isDev = это преобразованная системная переменная
+      в cross-env NODE_ENV=development или 
+      в cross-env NODE_ENV=production
+
+      const isDev = process.env.NODE_ENV === 'development';
+      таким образом получает boolean значение
+

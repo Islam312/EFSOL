@@ -3,9 +3,26 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtract = require('mini-css-extract-plugin');
+const CssMininizerWebpackPlugin = require('css-minimizer-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 //* переменная для работы hot module replacement(hmr)
+
+const optimization = () => {
+  const config = {
+    splitChunks: {
+      chunks: 'all',
+    },
+  };
+  if (!isDev) {
+    config.minimizer = [
+      new CssMininizerWebpackPlugin(),
+      new TerserWebpackPlugin(),
+    ];
+  }
+  return config;
+};
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -17,6 +34,7 @@ module.exports = {
     filename: './js/[contenthash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
+  optimization: optimization(),
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
@@ -29,6 +47,9 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       template: './index.html',
+      minify: {
+        collapseWhitespace: !isDev,
+      },
     }),
     new CopyWebpackPlugin({
       patterns: [
