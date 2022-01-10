@@ -118,3 +118,37 @@ resolve: {
       const isDev = process.env.NODE_ENV === 'development';
       таким образом получает boolean значение
 
+
+//* Babel - компилятор js  скриптов для поддержки новых фич 
+//* старыми броузерами
+//* npm install --save-dev babel-loader @babel/core
+
+////*/*/*/ 
+module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      }
+    ]
+  }
+
+
+//*package.json:
+  "browserslist": "> 0.25%, not dead", = будем работать 
+  со старыми броузерами которыми пользуются хотябы 0.25%
+
+npm i -D @babel/preset-env   -это предустановка 
+для новых фичей JS должен работать с полифилами
+//* npm install --save @babel/polyfill
+полифил взаимодействует как отдельная библеотека
+записывается в module.exports
+entry: {
+    main: ['@babel-polyfill', './js/index.js'],
+  },

@@ -28,7 +28,7 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: {
-    main: './js/index.js',
+    main: ['@babel/polyfill', './js/index.js'],
   },
   output: {
     filename: './js/[contenthash].bundle.js',
@@ -78,6 +78,16 @@ module.exports = {
           },
           'css-loader',
         ],
+      },
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
       {
         test: /\.s[ac]ss$/,
