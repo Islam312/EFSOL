@@ -203,3 +203,11 @@ module:{
 с расширениями файлов JSX
 а также скачиваем сам react и  react-dom на dependencies
 //* npm i react react-dom
+
+
+//* Работа с картами 
+//* devtool: isDev ? 'source-map' : ''
+/ дает возможность к картам в браузере
+/ в режиме development
+
+
