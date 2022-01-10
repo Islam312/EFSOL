@@ -24,11 +24,44 @@ const optimization = () => {
   return config;
 };
 
+//* css loader конструкция
+const cssLoader = (loader) => {
+  const loaders = [
+    {
+      loader: MiniCssExtract.loader,
+      options: {
+        // hmr: isDev,
+        // reloadAll: true,
+      },
+    },
+    'css-loader',
+  ];
+  if (loader) {
+    loaders.push(loader);
+  }
+  return loaders;
+};
+
+//* babel loader конструкция
+const babelPreset = (preset) => {
+  const presets = {
+    loader: 'babel-loader',
+    options: {
+      presets: ['@babel/preset-env'],
+      plugins: ['@babel/plugin-proposal-class-properties'],
+    },
+  };
+  if (preset) {
+    presets.options.presets.push(preset);
+  }
+  return presets;
+};
+
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: {
-    main: ['@babel/polyfill', './js/index.js'],
+    main: ['@babel/polyfill', './js/index.jsx'],
   },
   output: {
     filename: './js/[contenthash].bundle.js',
@@ -68,56 +101,28 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtract.loader,
-            options: {
-              // hmr: isDev,
-              // reloadAll: true,
-            },
-          },
-          'css-loader',
-        ],
+        use: cssLoader(),
       },
       {
-        test: /\.m?js$/,
+        test: /\.s[ac]ss$/,
+        use: cssLoader('sass-loader'),
+      },
+      {
+        test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-class-properties'],
-          },
-        },
+        use: babelPreset(),
       },
       {
         test: /\.ts$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              '@babel/preset-env',
-              '@babel/preset-typescript'
-            ],
-            plugins: ['@babel/plugin-proposal-class-properties'],
-          },
-        },
+        use: babelPreset('@babel/preset-typescript'),
       },
       {
-        test: /\.s[ac]ss$/,
-        use: [
-          {
-            loader: MiniCssExtract.loader,
-            options: {
-              // hmr: isDev,
-              // reloadAll: true,
-            },
-          },
-          'css-loader',
-          'sass-loader',
-        ],
+        test: /\.jsx$/,
+        exclude: /node_modules/,
+        use: babelPreset('@babel/preset-react'),
       },
+
       // {
       //   test: /\.(png|jpg|svg|gif)$/,
       //   use: ['file-loader'],

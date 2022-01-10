@@ -174,4 +174,32 @@ module:{
   ]
 }
 что бы взаимодействовать с файлами TS 
-через @babel устанавливаем preset-typescript
+через @babel устанавливаем @babel/preset-typescript
+
+
+//* Работа с ReactJS
+
+module:{
+  rules: [
+    {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-react'
+            ],
+            plugins: ['@babel/plugin-proposal-class-properties'],
+          },
+        },
+      },
+  ]
+}
+
+//* что бы работать с React файлами 
+добавляем @babel/preset-react  для работы 
+с расширениями файлов JSX
+а также скачиваем сам react и  react-dom на dependencies
+//* npm i react react-dom
