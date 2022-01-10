@@ -1,4 +1,4 @@
-import Post from '@/js/Post';
+import Post from '@/ts/Post.ts';
 
 import json from '@/assets/json.json';
 import './async';
@@ -11,5 +11,3 @@ const post = new Post('Webpack title post');
 
 console.log('Post to string', post.toString());
 console.log('json: =>>', json);
-
-async();

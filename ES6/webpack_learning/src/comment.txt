@@ -152,3 +152,26 @@ npm i -D @babel/preset-env   -это предустановка
 entry: {
     main: ['@babel-polyfill', './js/index.js'],
   },
+
+
+//* Работа с TypeScript
+module:{
+  rules: [
+    {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-typescript'
+            ],
+            plugins: ['@babel/plugin-proposal-class-properties'],
+          },
+        },
+      },
+  ]
+}
+что бы взаимодействовать с файлами TS 
+через @babel устанавливаем preset-typescript
