@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .swiper {
+        width: 600px;
+        height: 300px;
+      }
+      .swiper .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 32px;
+      }
+
+      .bg-red {
+        background-color: red;
+      }
+
+      .bg-green {
+        background-color: green;
+      }
+
+      .bg-blue {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide bg-red">Slide 1</div>
+        <div class="swiper-slide bg-green">Slide 2</div>
+        <div class="swiper-slide bg-blue">Slide 3</div>
+      </div>
+      <div class="swiper-pagination"></div>
+
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <div class="swiper-scrollbar"></div>
+    </div>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper('.swiper', {
+        direction: 'horizontal',
+        loop: true,
+
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
+  </body>
+</html>
