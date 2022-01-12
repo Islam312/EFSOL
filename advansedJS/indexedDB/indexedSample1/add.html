@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Indexed DB</a>
+    </nav>
+    <div class="container-fluid mt-5">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="./index.html"> Tasks list </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="./add.html"> Add Task </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#"> Delete Task </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <h2 class="m-3">Add task</h2>
+          <form  class="needs-validation">
+            <div class="form-group">
+              <label for="task">Task</label>
+              <input
+                type="text"
+                required
+                class="form-control"
+                id="task"
+                placeholder="Enter task here"
+              />
+              <div class="invalid-feedback">Pleace enter a task</div>
+            </div>
+            <div class="form-group">
+              <label for="person">Responsive person</label>
+              <input
+                type="text"
+                required
+                class="form-control"
+                id="person"
+                placeholder="Responsive person"
+              />
+              <div class="invalid-feedback">
+                Pleace enter a responsive person
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Person e-mail</label>
+              <input
+                type="email"
+                required
+                class="form-control"
+                id="email"
+                placeholder="Person email"
+              />
+              <div class="invalid-feedback">
+                Pleace enter a person email address
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="date">Due date</label>
+              <input type="date" required class="form-control" id="date" />
+              <div class="invalid-feedback">Pleace enter a due date</div>
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="addTask()">
+              Add new task
+            </button>
+          </form>
+        </main>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="indexedDb.js"></script>
+    <script src="validation.js"></script>
+  </body>
+</html>
