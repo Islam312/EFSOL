@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const promise = new Promise((resolve, reject)=>{
+      setTimeout(()=>{
+        console.log('this =>>', this)
+
+        resolve("Hello promise!")
+      }, 2000)
+      setTimeout(()=>{
+        console.log('this =>>', this)
+        reject(new Error('Errorище'))
+      },1900)
+    })
+
+    promise.then(
+      res => {
+        console.log('res =>>', res)
+      },
+      rej =>{
+        console.log('rej =>>', rej)
+        return 'after error'
+      }
+    ).then(afterErr => {
+      console.log('afterErr =>>', afterErr)
+    }).catch(err => {
+      console.log('err =>>', err)
+    })
+
+
+  </script>
+</body>
+</html>

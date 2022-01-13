@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Курс гривны</title>
+  </head>
+  <style>
+    table,
+    tr,
+    td {
+      border: 1px solid #000;
+    }
+  </style>
+  <body>
+    <table id="currensy">
+      <thead>
+        <tr>
+          <td>Название валюты</td>
+          <td>Аббревиатура</td>
+          <td>Курс</td>
+        </tr>
+      </thead>
+    </table>
+
+    <script>
+      const currensy = document.querySelector('#currensy');
+      const request = fetch(
+        'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json%E2%80%99'
+      );
+
+      request
+        .then((response) => (response.ok ? response.json() : false))
+        .then((response) => {
+          const filteredArray = response.filter((item) => item.rate > 25);
+          const tbody = document.createElement('tbody');
+
+          filteredArray.forEach((item) => {
+            const innerTableData = `<tr>
+              <td>${item.txt}</td>
+              <td>${item.cc}</td>
+              <td>${item.rate}</td>
+            </tr>`;
+            tbody.innerHTML += innerTableData;
+          });
+          currensy.append(tbody);
+        });
+    </script>
+  </body>
+</html>
