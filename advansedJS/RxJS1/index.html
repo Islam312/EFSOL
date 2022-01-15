@@ -14,43 +14,60 @@
 
     <script src="./node_modules/rxjs/dist/bundles/rxjs.umd.js"></script>
     <script>
-      const url = 'https://api.github.com/users';
+      const { Observable } = rxjs;
+
+      const url = 'https://api.github.com/users/';
       const btnReq = document.querySelector('#btn-request');
-      const inputReq = document.querySelector('#input-request').value;
       const table = document.querySelector('.table');
 
-      fromEvent(btnReq, 'click').subscribe(
-        fetch(url + inputReq)
-          .then((response) => {
-            if (response.ok) {
-              return response.json();
-            } else {
-              throw new Error(
-                `Сервер не отвечает. Ошибка номер ${response.status}`
-              );
-            }
-          })
-          .then((res) => {
-            return `<tbody>
-        <tr>
-          <td>Name: </td>
-          <td>${res.name}</td>
-        </tr>
-        <tr>
-          <td>Age: </td>
-          <td>${res.age}</td>
-        </tr>
-        <tr>
-          <td>Email: </td>
-          <td>${res.email}</td>
-        </tr>
-        <tr>
-          <td>Company: </td>
-          <td>${res.company}</td>
-        </tr>
-      </tbody>`;
-          })
-      );
+      btnReq.addEventListener('click', observerHandler);
+
+      function observerHandler() {
+        const inputReq = document.querySelector('#input-request').value;
+        const request$ = Observable.create((observer) => {
+          fetch(url + inputReq)
+            .then((response) => {
+              if (response.ok) {
+                return response.json();
+              } else {
+                throw new Error(
+                  `Сервер не отвечает. Ошибка номер ${response.status}`
+                );
+              }
+            })
+            .then((res) => {
+              observer.next(res);
+              observer.complete();
+            })
+            .catch((err) => {
+              observer.error(err);
+            });
+        });
+
+        // return
+        request$.subscribe((value) => {
+          console.log('value =>>', value)
+          const htmlCollection = `<tbody>
+                    <tr>
+                      <td>Name: </td>
+                      <td>${value.name}</td>
+                    </tr>
+                    <tr>
+                      <td>Age: </td>
+                      <td>${value.age}</td>
+                    </tr>
+                    <tr>
+                      <td>Github: </td>
+                      <td>${value.html_url}</td>
+                    </tr>
+                    <tr>
+                      <td>Photo url: </td>
+                      <td><a target="blank" href="${value.avatar_url}">ссылка на аватар в Github</a></td>
+                    </tr>
+                  </tbody>`;
+          table.innerHTML = htmlCollection;
+        });
+      }
     </script>
   </body>
 </html>
