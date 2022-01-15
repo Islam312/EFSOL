@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" placeholder="Enter github names" id="input-request" />
+    <button type="button" id="btn-request">Search</button>
+
+    <table class="table"></table>
+
+    <script src="./node_modules/rxjs/dist/bundles/rxjs.umd.js"></script>
+    <script>
+      const { Subject } = rxjs;
+
+      const url = 'https://api.github.com/users/';
+      const btnReq = document.querySelector('#btn-request');
+      const table = document.querySelector('.table');
+
+      btnReq.addEventListener('click', subjectHandler);
+
+      function subjectHandler() {
+        const inputReq = document.querySelector('#input-request').value;
+        const request$ = new Subject();
+        // return
+        request$.subscribe((value) => {
+          console.log('value =>>', value);
+          const htmlCollection = `<tbody>
+                    <tr>
+                      <td>Name: </td>
+                      <td>${value.name}</td>
+                    </tr>
+                    <tr>
+                      <td>Age: </td>
+                      <td>${value.age}</td>
+                    </tr>
+                    <tr>
+                      <td>Github: </td>
+                      <td>${value.html_url}</td>
+                    </tr>
+                    <tr>
+                      <td>Photo url: </td>
+                      <td><a target="blank" href="${value.avatar_url}">ссылка на аватар в Github</a></td>
+                    </tr>
+                  </tbody>`;
+          table.innerHTML = htmlCollection;
+        });
+        fetch(url + inputReq)
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error(
+                `Сервер не отвечает. Ошибка номер ${response.status}`
+              );
+            }
+          })
+          .then((res) => {
+            request$.next(res);
+            request$.complete();
+          })
+          .catch((err) => {
+            request$.error(err);
+          });
+      }
+    </script>
+  </body>
+</html>

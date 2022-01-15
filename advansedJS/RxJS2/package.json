@@ -1,0 +1,16 @@
+{
+  "name": "rxjs1",
+  "version": "1.0.0",
+  "main": "observer.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "rxjs": "^7.5.2"
+  }
+}
