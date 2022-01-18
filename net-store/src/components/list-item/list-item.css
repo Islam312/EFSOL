@@ -1,0 +1,9 @@
+.width30p{
+  width: 100%;
+}
+.d-flex{
+  display: flex;
+}
+.jc-sa{
+  justify-content: space-between;
+}
