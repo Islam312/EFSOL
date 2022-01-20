@@ -1,29 +1,32 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import './navbar.css'
+import './navbar.css';
 
 export const Navbar: React.FC = () => {
+
   return (
-    <nav className='blue darken-3'>
+    <nav className="purple darken-4">
       <div className="nav-wrapper container">
         <NavLink to="/" className="brand-logo">
           Главная
         </NavLink>
         <ul className="right hide-on-med-and-down">
           <li>
-            <button className='btn mr-5'>Телевизоры</button>
+            <NavLink to='/tv-sets'
+              className="btn mr-5 purple darken-1"
+            >
+              Телевизоры
+            </NavLink>
           </li>
           <li>
-            <button className='btn mr-5'>Холодильники</button>
+            <NavLink to='/refrigerators' className="btn mr-5 purple darken-1">Холодильники</NavLink>
           </li>
           <li>
-            <button className='btn mr-5'>Утюги</button>
+            <NavLink to='/irons' className="btn mr-5 purple darken-1">Утюги</NavLink>
           </li>
         </ul>
       </div>
     </nav>
   );
 };
-
-

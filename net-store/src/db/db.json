@@ -1,0 +1,103 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "category": "Утюг",
+      "brand": "Polaris",
+      "name": "PIR-2430",
+      "price": 45,
+      "currensy": "$",
+      "imgUrl": "https://www.technodom.kz/media/catalog/product/e/d/edfc9d79e3b485b575fa9811e4609bd21a2ff627_246396_1.jpg",
+      "receipt date": "2021-10-22",
+      "description": "Утюг Polaris PIR-2430"
+    },
+    {
+      "id": 2,
+      "category": "Холодильник",
+      "brand": "Samsung",
+      "name": "Samsung RB-33A3440SA",
+      "price": 620,
+      "currensy": "$",
+      "imgUrl": "https://www.technodom.kz/media/catalog/product/4/4/44d216a471b4bc84276b47d3c4323815b01e25cf_235697_1.jpg",
+      "receipt date": "2021-07-12",
+      "description": "Холодильник Samsung RB-33A3440SA"
+    },
+    {
+      "id": 3,
+      "category": "Утюг",
+      "brand": "Braun",
+      "name": "TS-755",
+      "price": 72,
+      "currensy": "$",
+      "imgUrl": "https://www.technodom.kz/media/catalog/product/c/3/c3ec2a8372ff32556a4c6d771e853f4b209b6460_37032_1c.jpg",
+      "receipt date": "2021-05-23",
+      "description": "Утюг Braun TS-755"
+    },
+    {
+      "id": 4,
+      "category": "Телевизор",
+      "brand": "Sony",
+      "name": "Sony LED UHD Smart Black",
+      "price": 1040,
+      "currensy": "$",
+      "imgUrl": "https://www.technodom.kz/media/catalog/product/0/0/00d668a07bdedb1104114381ad80ebce7e211baf_244854_1.jpg",
+      "receipt date": "2021-05-13",
+      "description": "Телевизор Sony 65\" LED UHD Smart Black"
+    },
+    {
+      "id": 5,
+      "category": "Холодильник",
+      "brand": "Bosch",
+      "name": "Bosch Black",
+      "price": 920,
+      "currensy": "$",
+      "imgUrl": "https://www.technodom.kz/media/catalog/product/7/0/7061123210e239ba03aa810561052f75d20b0a19_12792399069214.jpg",
+      "receipt date": "2021-04-11",
+      "description": "Двухкамерный холодильник Bosch"
+    },
+    {
+      "id": 6,
+      "category": "Телевизор",
+      "brand": "LG",
+      "name": "LG LED UHD Smart Grey",
+      "price": 840,
+      "currensy": "$",
+      "imgUrl": "https://www.technodom.kz/media/catalog/product/a/c/acd55c72f0488235a9308d6bb246222561bfc5f4_242412_1.jpg",
+      "receipt date": "2021-03-10",
+      "description": "Телевизор LG 65\" LED UHD Smart Grey"
+    },
+    {
+      "id": 7,
+      "category": "Холодильник",
+      "brand": "LG",
+      "name": "LG GA-B459CLWL",
+      "price": 540,
+      "currensy": "$",
+      "imgUrl": "https://www.technodom.kz/media/catalog/product/1/8/185cee9072368f4efd133906ab989305222a6141_216441_1.jpg",
+      "receipt date": "2021-02-11",
+      "description": "Двухкамерный холодильник LG GA-B459CLWL"
+    },
+    {
+      "id": 8,
+      "category": "Утюг",
+      "brand": "Scarlett",
+      "name": "SC-SI30K35",
+      "price": 21,
+      "currensy": "$",
+      "imgUrl": "https://www.technodom.kz/media/catalog/product/f/6/f65832320e134e151e557bf5e29bbf99b479a967_201132_1.jpg",
+      "receipt date": "2021-01-27",
+      "description": "Утюг Scarlett SC-SI30K35"
+    },
+    {
+      "id": 9,
+      "category": "Телевизор",
+      "brand": "Samsung",
+      "name": "Samsung LED HD Smart Black",
+      "price": 340,
+      "currensy": "$",
+      "imgUrl": "https://www.technodom.kz/media/catalog/product/8/7/87cf4383bfc1d857363659d36c4c55fede9f1266_216693_1.jpg",
+      "receipt date": "2021-01-02",
+      "description": "Телевизор 32\" Samsung LED HD Smart Black"
+    }
+  ]
+}

@@ -1,24 +1,36 @@
-import { data } from '../../data';
+import {
+  ProductAction,
+  productActionType,
+  productStateType,
+} from '../actions/productActions';
 
-interface ProductState {
-    data: any[]
-}
-
-const initialState: ProductState = {
-  data: [...data],
+const initialState: productStateType = {
+  products: [],
+  loading: false,
+  error: null,
 };
 
-
-
-type ProductActionType = {
-  type: string;
-  payload: any;
-};
-
-
-export const productReducer = (state = initialState, action: ProductActionType): ProductState => {
-    switch(action.type){
-        default:
-            return state
-    }
+export const productReducer = (state = initialState, action: ProductAction): productStateType => {
+  switch (action.type) {
+    case productActionType.FETCH_PRODUCTS:
+      return {
+        loading: true,
+        error: null,
+        products: [],
+      };
+    case productActionType.FETCH_PRODUCTS_SUCCESS:
+      return {
+        loading: false,
+        error: null,
+        products: action.payload,
+      };
+    case productActionType.FETCH_PRODUCTS_ERROR:
+      return {
+        loading: false,
+        error: action.payload,
+        products: [],
+      };
+    default:
+      return state;
+  }
 };

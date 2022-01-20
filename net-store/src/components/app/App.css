@@ -37,3 +37,21 @@
   }
 }
 
+/** edit page*/
+.edit-page img {
+  width: 100%;
+}
+.edit-page .left-side {
+  padding: 20px;
+  width: 50%;
+}
+.edit-page form {
+  width: 50%;
+}
+
+.purple-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
