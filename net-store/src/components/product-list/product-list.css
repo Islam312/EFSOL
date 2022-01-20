@@ -1,4 +1,13 @@
 .card-image{
-  width: 200px;
-  padding: 10px;
-}
+    width: 200px;
+    padding: 10px;
+  }
+  .width30p{
+    width: 100%;
+  }
+  .d-flex{
+    display: flex;
+  }
+  .jc-sa{
+    justify-content: space-between;
+  }

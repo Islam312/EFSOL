@@ -1,13 +1,6 @@
 
 //* типы для передачи массива product-list, 
 //* после объекта в list-item
-export type ProductListProps = {
-  productData: productItemType[];
-};
-
-export type ProductItem = {
-  productItem: productItemType;
-};
 
 export type productItemType = {
   id: number;
