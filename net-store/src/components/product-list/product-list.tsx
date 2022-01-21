@@ -25,7 +25,7 @@ export const ProductList: React.FC = () => {
   }
   products.sort((a, b) => {
     if (a['receipt date'] < b['receipt date']) return 1;
-    if (a['receipt date'] > b['receipt date']) return -1;
+    if (a['receipt date'] > b['receipt date']) return -1; 
     return 0
   });
 
