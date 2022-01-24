@@ -43,7 +43,8 @@
 }
 .edit-page .left-side {
   padding: 20px;
-  width: 50%;
+  width: 40%;
+  margin-right: 50px;
 }
 .edit-page form {
   width: 50%;

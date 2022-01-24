@@ -1,30 +1,30 @@
 import {
-  ProductAction,
-  productActionType,
-  productStateType,
-} from '../actions/productActions';
+  FetchAction,
+  FetchActionType,
+  FetchStateType,
+} from '../actions/fetchActions';
 
-const initialState: productStateType = {
+const initialState: FetchStateType= {
   products: [],
   loading: false,
   error: null,
 };
 
-export const productReducer = (state = initialState, action: ProductAction): productStateType => {
+export const fetchReducer = (state = initialState, action: FetchAction): FetchStateType => {
   switch (action.type) {
-    case productActionType.FETCH_PRODUCTS:
+    case FetchActionType.FETCH_PRODUCTS:
       return {
         loading: true,
         error: null,
         products: [],
       };
-    case productActionType.FETCH_PRODUCTS_SUCCESS:
+    case FetchActionType.FETCH_PRODUCTS_SUCCESS:
       return {
         loading: false,
         error: null,
         products: action.payload,
       };
-    case productActionType.FETCH_PRODUCTS_ERROR:
+    case FetchActionType.FETCH_PRODUCTS_ERROR:
       return {
         loading: false,
         error: action.payload,

@@ -1,28 +1,11 @@
-import { productItemType } from "../../types/types";
 
-export type productStateType = {
-  products: productItemType[];
-  loading: boolean;
-  error: null | string;
-};
-export enum productActionType {
-  FETCH_PRODUCTS = 'FETCH_PRODUCTS',
-  FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS',
-  FETCH_PRODUCTS_ERROR = 'FETCH_PRODUCTS_ERROR',
+export enum ProductActionConstants {
+  EDIT_PRODUCT = 'EDIT_PRODUCT',
 }
-type fetchProductActionType = {
-  type: productActionType.FETCH_PRODUCTS;
-};
-type fetchProductSuccessActionType = {
-  type: productActionType.FETCH_PRODUCTS_SUCCESS;
-  payload: any[];
-};
-type fetchProductErrorActionType = {
-  type: productActionType.FETCH_PRODUCTS_ERROR;
-  payload: string;
+
+type ProductEditActionType = {
+  type: ProductActionConstants.EDIT_PRODUCT;
+  payload: any;
 };
 
-export type ProductAction =
-  | fetchProductActionType
-  | fetchProductSuccessActionType
-  | fetchProductErrorActionType;
+export type ProductAction = ProductEditActionType;
