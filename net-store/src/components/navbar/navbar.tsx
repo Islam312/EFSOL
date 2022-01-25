@@ -8,10 +8,10 @@ export const Navbar: React.FC = () => {
   return (
     <nav className="purple darken-4">
       <div className="nav-wrapper container">
-        <NavLink to="/" className="brand-logo">
+        <NavLink to="/" className="header">
           Главная
         </NavLink>
-        <ul className="right hide-on-med-and-down">
+        <ul className="right">
           <li>
             <NavLink to='/tv-sets'
               className="btn mr-5 purple darken-1"

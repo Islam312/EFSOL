@@ -6,7 +6,9 @@ export const EditProduct: React.FC = () => {
   const [product, setProduct] = useState(currentProduct);
   console.log(currentProduct);
 
-  const editBrand = () => {};
+  const editBrand = () => {
+    
+  };
   return (
     <div className="container edit-page">
       <h5 className="header">Редактирование</h5>

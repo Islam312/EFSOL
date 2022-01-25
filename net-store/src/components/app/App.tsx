@@ -18,9 +18,9 @@ const App: React.FC = () => {
       <main>
         <Routes>
           <Route path="/" element={<ProductList />}></Route>
-          <Route path="/tv-sets" element={<TVsetPage />}></Route>
-          <Route path="/refrigerators" element={<RefrigeratorPage />}></Route>
-          <Route path="/irons" element={<Irons />}></Route>
+          <Route path="/:category" element={<TVsetPage />}></Route>
+          <Route path="/:category" element={<RefrigeratorPage />}></Route>
+          <Route path="/:category" element={<Irons />}></Route>
           <Route path="/:category/:id" element={<EditProduct />}></Route>
         </Routes>
       </main>
