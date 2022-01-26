@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { HomeWork1 } from './home-works/homework1';
+import { HomeWork3 } from './home-works/homework3';
+import { HomeWork4 } from './home-works/homework4';
 
 function App() {
+  const arr = ['JS', 'React', 'component', 'Props'];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <HomeWork1 arr={arr} />
+      <hr />
+      <HomeWork3 />
+      <hr />
+      <HomeWork4 arr={arr} />
     </div>
   );
 }
