@@ -1,0 +1,14 @@
+.formControl {
+  padding: 10px;
+}
+.form{
+  letter-spacing: 2px;
+}
+.active input {
+  border: 2px solid green;
+  color: green;
+}
+.error input {
+  border: 2px solid red;
+  color: red;
+}

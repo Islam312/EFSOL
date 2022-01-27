@@ -1,8 +1,9 @@
 import { HomeWork1 } from './home-works/homework1';
 import { HomeWork3 } from './home-works/homework3';
 import { HomeWork4 } from './home-works/homework4';
-import HomeWork5_1 from './home-works/homework5';
-import { HomeWork5_2 } from './home-works/homework5.2';
+import HomeWork51 from './home-works/homework5.1';
+import { HomeWork52 } from './home-works/homework5.2';
+import HomeWork6 from './home-works/homework6';
 
 function App() {
   const arr = ['JS', 'React', 'component', 'Props'];
@@ -14,10 +15,11 @@ function App() {
       <hr />
       <HomeWork4 arr={arr} />
       <hr />
-      <HomeWork5_1 />
-      <hr/>
-      <HomeWork5_2 />
-      <hr/>
+      <HomeWork51 />
+      <hr />
+      <HomeWork52 />
+      <hr />
+      <HomeWork6 />
     </div>
   );
 }

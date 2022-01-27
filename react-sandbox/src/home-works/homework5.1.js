@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class HomeWork5_1 extends Component {
+export default class HomeWork51 extends Component {
   state = {
     name: '',
     password: '',

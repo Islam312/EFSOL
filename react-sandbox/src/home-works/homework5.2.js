@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const HomeWork5_2 = () => {
+export const HomeWork52 = () => {
   const state = {
     num1: 0,
     num2: 0,
