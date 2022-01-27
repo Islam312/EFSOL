@@ -2,25 +2,47 @@ import React, { useState } from 'react';
 import styleClass from './homework6.module.css';
 
 export const HomeWork6 = () => {
-  let classNames = [`${styleClass.form}`];
+  const state = {
+    required: false,
+    classNames: [`${styleClass.form}`],
+  };
 
-  const [borderStyleState, setBorderStyleState] = useState(classNames);
+  const [borderStyleState, setBorderStyleState] = useState(state);
 
-  const onChangeInput = (e) => {
-    if (borderStyleState.length > 1) {
-      setBorderStyleState(borderStyleState.pop());
-    }
-    if (e.target.value) {
-      setBorderStyleState((prev) => [...prev, styleClass.active]);
+  const onChangeBorderState = (e) => {
+    e.target.value
+      ? setBorderStyleState((prev) => ({ ...prev, required: true }))
+      : setBorderStyleState((prev) => ({ ...prev, required: false }));
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (borderStyleState.required) {
+      setBorderStyleState((prev) => ({
+        ...prev,
+        classNames: [...prev.classNames, styleClass.active],
+      }));
     } else {
-      setBorderStyleState((prev) => [...prev, styleClass.error]);
+      setBorderStyleState((prev) => ({
+        ...prev,
+        classNames: [...prev.classNames, styleClass.error],
+      }));
     }
   };
+
   return (
     <div>
       <h5>Homework 6</h5>
-      <form className={borderStyleState.join(' ')}>
-        <input type="text" onChange={onChangeInput} className='formControl'/>
+      <form
+        onSubmit={onSubmit}
+        className={borderStyleState.classNames.join(' ')}
+      >
+        <input
+          type="text"
+          onChange={onChangeBorderState}
+          className={styleClass.formControl}
+        />
+        <input type="submit" value="Submit" className="btn" />
       </form>
     </div>
   );

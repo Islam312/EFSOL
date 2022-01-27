@@ -1,14 +1,15 @@
+
+.form {
+  letter-spacing: 2px;
+}
 .formControl {
   padding: 10px;
 }
-.form{
-  letter-spacing: 2px;
-}
-.active input {
+.active input[type='text'] {
   border: 2px solid green;
   color: green;
 }
-.error input {
+.error input[type='text'] {
   border: 2px solid red;
   color: red;
 }
